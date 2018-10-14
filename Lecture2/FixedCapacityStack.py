@@ -1,5 +1,8 @@
-class FixedSizeStack:
+class FixedCapacityStack:
     def __init__(self, capacity):
+        if capacity < 1:
+            raise ValueError("Capacity should be a positive number")
+
         self.capacity = capacity
         self.size = 0
         self.array = [None] * capacity
@@ -34,26 +37,6 @@ class FixedSizeStack:
 
         for i in range(self.size - 1, -1, -1):
             print(self.array[i])
-
-stack = FixedSizeStack(5)
-stack.push(3)
-stack.push(47)
-stack.push(1)
-stack.push(5)
-stack.print()
-
-print("======")
-print(stack.peek(), end="\n")
-
-stack.pop()
-stack.pop()
-print("======")
-print(stack.peek(), end="\n")
-stack.pop()
-stack.pop()
-print("======")
-stack.print()
-
 
 
 
