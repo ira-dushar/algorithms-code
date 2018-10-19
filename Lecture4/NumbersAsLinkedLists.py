@@ -9,7 +9,7 @@ def print_number(node):
     curr_node = node
     while curr_node is not None:
         res.append(curr_node.item)
-        curr_node = curr_node.next
+        curr_node = curr_node.next_node
 
     print("".join(reversed([str(x) for x in res])))
 
@@ -23,8 +23,8 @@ def sum_linked_lists(l1, l2):
 
     result_node = current_node = LinkedListNode((l1.item + l2.item) % 10, None)
     overflow = (l1.item + l2.item) // 10
-    l1 = l1.next
-    l2 = l2.next
+    l1 = l1.next_node
+    l2 = l2.next_node
 
     while l1 is not None and l2 is not None:
         curr_item = (l1.item + l2.item + overflow) % 10
@@ -32,8 +32,8 @@ def sum_linked_lists(l1, l2):
         current_node = current_node.next_node
         overflow = (l1.item + l2.item + overflow) // 10
 
-        l1 = l1.next
-        l2 = l2.next
+        l1 = l1.next_node
+        l2 = l2.next_node
 
     if l1 is None:
         l1 = l2
@@ -44,7 +44,7 @@ def sum_linked_lists(l1, l2):
         current_node = current_node.next_node
         overflow = (l1.item + overflow) // 10
 
-        l1 = l1.next
+        l1 = l1.next_node
 
     if overflow != 0:
         current_node.next_node = LinkedListNode(overflow, None)
@@ -52,7 +52,7 @@ def sum_linked_lists(l1, l2):
     return result_node
 
 # 4682
-n1 = LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, LinkedListNode(9))))
+n1 = LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, None))))
 # 145
 n2 = LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, None)))
 
