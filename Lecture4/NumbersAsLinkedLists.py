@@ -1,5 +1,5 @@
 class LinkedListNode:
-    def __init__(self, item, next_node = None):
+    def __init__(self, item, next_node=None):
         self.item = item
         self.next_node = next_node
 
@@ -51,9 +51,9 @@ def sum_linked_lists(l1, l2):
 
     return result_node
 
-# 4682
+# 9999
 n1 = LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, None))))
-# 145
+# 999
 n2 = LinkedListNode(9, LinkedListNode(9, LinkedListNode(9, None)))
 
 print_number(sum_linked_lists(n1, n2))
