@@ -4,10 +4,12 @@ import random
 def sort(arr):
     n = len(arr)
     for i in range(1, n):
+        tmp = arr[i]
         j = i
-        while arr[j - 1] > arr[j] and j > 0:
-            arr[j - 1], arr[j] = arr[j], arr[j - 1]
+        while j > 0 and arr[j - 1] > tmp:
+            arr[j] = arr[j - 1]
             j -= 1
+        arr[j] = tmp
 
 
 if __name__ == "__main__":
