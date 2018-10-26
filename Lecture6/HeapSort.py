@@ -51,7 +51,7 @@ if __name__ == "__main__":
     sort(sorted_arr)
     print(sorted_arr)
 
-    random_arr = [random.randint(0, 1000) for i in range(40)]
+    random_arr = [random.randint(0, 100) for i in range(40)]
     sort(random_arr)
     print(random_arr)
 
