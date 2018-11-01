@@ -22,7 +22,7 @@ def sink(arr, heap_size, i):
 
     while 2 * i + 1 < n:
         k = 2 * i + 1
-        if 2 * i + 2 < n and arr[2 * i + 1] < arr[2 * i + 2]:
+        if k + 1 < n and arr[k] < arr[k + 1]:
             k += 1
 
         if arr[i] < arr[k]:
